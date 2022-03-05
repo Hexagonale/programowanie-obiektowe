@@ -4,10 +4,16 @@ namespace Lab1
 {
     class Fraction : IEquatable<Fraction>, IComparable<Fraction>
     {
+        public Fraction()
+        {
+            this.numerator = 1;
+            this.denominator = 1;
+        }
+
         public Fraction(int numerator, int denominator)
         {
-            _numerator = numerator;
-            _denominator = denominator;
+            this.numerator = numerator;
+            this.denominator = denominator;
         }
 
         public Fraction(Fraction fraction)
@@ -15,19 +21,9 @@ namespace Lab1
             return new Fraction(fraction.numerator, fraction.denominator);
         }
 
-        private int _numerator;
+        public int numerator { get; }
 
-        public int numerator
-        {
-            get => _numerator;
-        }
-
-        private int _denominator;
-
-        public int denominator
-        {
-            get => _denominator;
-        }
+        public int denominator { get; }
 
         public override bool Equals(Fraction other)
         {
@@ -36,7 +32,7 @@ namespace Lab1
                 return false;
             }
 
-            if (_numerator / other.numerator == _denominator / other.denominator)
+            if (numerator / other.numerator == denominator / other.denominator)
             {
                 return true;
             }
@@ -51,7 +47,7 @@ namespace Lab1
                 return 1;
             }
 
-            double ratio = _numerator / _denominator;
+            double ratio = numerator / denominator;
             double otherRatio = other.numerator / other.denominator;
 
             return ratio.CompareTo(otherRatio);
