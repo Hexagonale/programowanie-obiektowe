@@ -45,9 +45,9 @@ namespace lab2
         public string RenderTasks(string prefix = "\t")
         {
             string text = "";
-            foreach (Task task in tasks)
+            for (int i = 0; i < tasks.Count; i++)
             {
-                text += prefix + task.ToString() + "\n";
+                text += prefix + i.ToString() + ". " + tasks[i].ToString() + "\n";
             }
 
             return text;
@@ -55,7 +55,11 @@ namespace lab2
 
         public override string ToString()
         {
-            return base.ToString() + " " + group;
+            string text = "Student: " + base.ToString() + "\n";
+            text += "Group: " + group + "\n";
+            text += "Tasks:\n" + RenderTasks() + "\n\n";
+
+            return text;
         }
 
         public bool Equals([AllowNull] Student other)

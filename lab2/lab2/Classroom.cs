@@ -18,7 +18,14 @@ namespace lab2
 
         public override string ToString()
         {
-            return name;
+            string text = "Classroom: " + name + "\n\n";
+
+            foreach (Person person in persons)
+            {
+                text += person.ToString() + "\n\n";
+            }
+
+            return text;
         }
     }
 }

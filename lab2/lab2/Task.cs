@@ -41,7 +41,7 @@ namespace lab2
 
         public override string ToString()
         {
-            return name + " " + status.ToString();
+            return name + " [" + status.ToString() + "]";
         }
     }
 

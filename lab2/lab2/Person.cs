@@ -42,7 +42,7 @@ namespace lab2
 
         public override string ToString()
         {
-            return name + " " + age.ToString();
+            return name + " (" + age.ToString() + " y.o.)";
 
         }
     }
